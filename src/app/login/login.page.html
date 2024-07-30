@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>{{textos.header}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cambiarIdioma()">{{selectedLanguage=="es" ? "Ingles" : "Spanish"}}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="light">
+  <ion-card-content>
+    <!-- Ingresar mail -->
+    <ng-container *ngIf="paso === 1">
+      <ion-card color="primary-contrast">
+        <ion-card-header>
+          <h2>{{textos.titulo}}</h2>
+          <p>
+            {{textos.subtitulo}}
+          </p>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input [(ngModel)]="useremail" fill="outline" type="email" errorText="el mail es invalido"
+            #emailinput></ion-input>
+          <ion-note *ngIf="invalidMail == true" slot="error" color="danger" class="ion-hide">El mail no es
+            valido</ion-note>
+          <br>
+        </ion-card-content>
+        <ion-button size="default" expand="block" (click)="enviarEmail()"
+          [disabled]="useremail == ''">{{textos.accion}}</ion-button>
+        <br>
+      </ion-card>
+    </ng-container>
+
+    <!-- Esperar por token-->
+    <ng-container *ngIf="paso === 2">
+      <ion-card color="primary-contrast">
+        <ion-card-header>
+          <h2>Se ha enviado un token</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input [(ngModel)]="token" fill="outline" type="number"></ion-input>
+          <br>
+        </ion-card-content>
+        <ion-button size="default" expand="block" [disabled]="token == 0" (click)="vincularUsuario()"
+          ngDefaultControl>{{textos.accion}}</ion-button>
+        <br>
+      </ion-card>
+    </ng-container>
+
+    <!-- Multiples usuarios-->
+    <ng-container *ngIf="paso === 3">
+      <ion-card color="primary-contrast">
+        <ion-card-header>
+          <h2>Estos usuarios estan asociados a su email, elija uno para continuar</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list lines="none">
+            <ion-radio-group (ionChange)="usuarioSeleccionado($event)">
+              <ion-item *ngFor="let usuario of usuarios">
+                <ion-radio [value]="usuario.id" labelPlacement="end" color="primary"
+                  justify="start">{{usuario.nombre}}</ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+          <br>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+
+  </ion-card-content>
+</ion-content>

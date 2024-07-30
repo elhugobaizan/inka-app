@@ -1,0 +1,10 @@
+{
+    "Encuestas": [
+        {
+            "id": 1,
+            "titulo": "Esta es una encuesta de prueba",
+            "subtitulo": "Conteste lo que quiera",
+            "fechaCreada": "10/07/2024"
+        }
+    ]
+}

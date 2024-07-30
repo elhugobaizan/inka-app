@@ -1,0 +1,8 @@
+{
+    "login": {
+        "header": "login",
+        "titulo": "Write your email to access",
+        "subtitulo": "we're sending you a code",
+        "accion": "Continue"
+    }
+}

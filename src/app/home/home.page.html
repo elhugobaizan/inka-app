@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{textos.saludo}} {{usuario == null ? "" : usuario.nombre}}!
+    </ion-title>
+    <div class="header" slot="primary">
+      <ion-img src="../../assets/Inka_blanco.svg"></ion-img>
+    </div>
+  </ion-toolbar>
+  <ion-img src="../../assets/images/ACONCAGUA-23_742_small-1-400x300.webp"></ion-img>
+</ion-header>
+<ion-content [fullscreen]="true" *ngIf="this.usuario != null">
+  <ion-card id="inka-novedad">
+    <ion-card-content>
+      <ion-label class="ion-text-wrap">
+        Placeholder para una novedad interesante que queremos contarle al usuario
+      </ion-label>
+    </ion-card-content>
+    <div class="ion-text-end">
+      <ion-button fill="clear" (click)="irA('pages/encuesta/1')">Ir</ion-button>
+    </div>
+  </ion-card>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="4">
+        <div class="home-button ion-text-center" (click)="irA('pages/salida/1')">
+          <ion-button size="large">
+            <ion-icon slot="icon-only" src="../../assets/icon-ruta.svg"></ion-icon>
+          </ion-button><br>
+          Tu salida
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="home-button ion-text-center" (click)="irA('pages/encuestas')">
+          <ion-button size="large">
+            <ion-icon slot="icon-only" src="../../assets/icon-encuesta.svg"></ion-icon>
+          </ion-button><br>
+          Encuestas
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="home-button ion-text-center" (click)="irA('pages/reclamos')">
+          <ion-button size="large">
+            <ion-icon slot="icon-only" src="../../assets/icon-reclamo.svg"></ion-icon>
+          </ion-button><br>
+          Reclamos
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card id="inka-informacion">
+    <ion-card-content>
+      <ion-label class="ion-text-wrap">
+        Placeholder para alguna otra informacion para mostrarle
+        Tu proxima salida es en 5 dias!
+      </ion-label>
+    </ion-card-content>
+    <div class="ion-text-end">
+      <ion-button fill="clear" (click)="irA('salidas')">Ver mas</ion-button>
+    </div>
+  </ion-card>
+</ion-content>
+<ion-content [fullscreen]="true" *ngIf="this.usuario == null">
+  <ion-card>
+    <ion-card-title>
+      No esta logueado!
+    </ion-card-title>
+    <ion-card-subtitle>
+      Por favor loguearse para seguir
+    </ion-card-subtitle>
+    <ion-card-content>
+      <ion-button (click)="irA('/login')">Ir a Login</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,58 @@
+{
+    "Salida": {
+        "id": "IKN001",
+        "descripcion": "Aconcagua ruta normal",
+        "itinerario": [
+            {
+                "dia": 1,
+                "titulo": "MENDOZA – ALTITUD: 760 MTS.",
+                "detalle": "Nuestra expedición comienza en Mendoza, Argentina. A tu llegada al aeropuerto, un representante de INKA Expediciones estará esperándote. Te alojaremos en un confortable hotel céntrico donde, luego de un tiempo para descansar, participarás de una reunión grupal en la cual conocerás al guía y al resto de los miembros del grupo. Alojamiento: Hotel BASE DOBLE O TRIPLE – Transporte: Aeropuerto – Hotel en Mendoza"
+            },
+            {
+                "dia": 2,
+                "titulo": "MENDOZA / PUENTE DE INCA – ALTITUD: 2700 MTS.",
+                "detalle": ""
+            },
+            {
+                "dia": 3,
+                "titulo": "PUENTE DE INCA / CONFLUENCIA – ALTITUD: 3390 MTS.",
+                "detalle": ""
+            },
+            {
+                "dia": 4,
+                "titulo": "TREKKING DE ACLIMATACIÓN A PLAZA FRANCIA – ALTITUD: 4000 MTS.",
+                "detalle": ""
+            },
+            {
+                "dia": 5,
+                "titulo": "APROXIMACIÓN CONFLUENCIA A PLAZA DE MULAS – ALTITUD: 4300 MTS.",
+                "detalle": ""
+            },
+            {
+                "dia": 6,
+                "titulo": "DESCANSO EN PLAZA DE MULAS – ALTITUD: 4300 MTS.",
+                "detalle": ""
+            },
+            {
+                "dia": 7,
+                "titulo": "TRASLADO DE EQUIPOS Y COMIDA A CAMPO 1 – ALTITUD: 5050 MTS.",
+                "detalle": ""
+            },
+            {
+                "dia": 8,
+                "titulo": "DÍA DE DESCANSO EN PLAZA DE MULAS – ALTITUD: 4300 MTS.",
+                "detalle": ""
+            },
+            {
+                "dia": 9,
+                "titulo": "ASCENSO DESDE CAMPAMENTO BASE A CAMPO 1 (PLAZA CANADÁ) – ALTITUD: 5050 MTS.",
+                "detalle": ""
+            },
+            {
+                "dia": 10,
+                "titulo": "ASCENSO A CAMPO 2 (NIDO DE CÓNDORES) – ALTITUD: 5550 MTS.",
+                "detalle": ""
+            }
+        ]
+    }
+}

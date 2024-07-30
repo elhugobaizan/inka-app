@@ -1,0 +1,20 @@
+{
+    "Preguntas": [
+        {
+            "id": 1,
+            "encuestaId": 1,
+            "pregunta": "Que tan satisfecho esta con la comida?"
+        },
+        {
+            "id": 2,
+            "encuestaId": 1,
+            "pregunta": "Que tan satisfecho esta con el alojamiento?"
+        },
+        {
+            "id": 3,
+            "encuestaId": 1,
+            "pregunta": "Que tan satisfecho esta con el guia?"
+        }
+
+    ]
+}

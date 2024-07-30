@@ -1,0 +1,40 @@
+<div class="ion-page">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="home" color="primary"></ion-back-button>
+      </ion-buttons>
+      <ion-title color="primary">Encuestas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-list *ngFor="let encuesta of encuestas">
+      <ion-item button detail="true" detail-icon="caret-forward-outline" (click)="irA('pages/encuesta/' + encuesta.id)">
+        <ion-label>
+          <h3>{{encuesta.titulo}}</h3>
+          <p>{{encuesta.subtitulo}}</p>
+          <p>Creada el {{encuesta.fechaCreada}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngFor="let encuesta of encuestas">
+      <ion-item button detail="true" detail-icon="caret-forward-outline" (click)="irA('pages/encuesta/' + encuesta.id)">
+        <ion-label>
+          <h3>{{encuesta.titulo}}</h3>
+          <p>{{encuesta.subtitulo}}</p>
+          <p>Creada el {{encuesta.fechaCreada}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngFor="let encuesta of encuestas">
+      <ion-item button detail="true" detail-icon="caret-forward-outline" (click)="irA('pages/encuesta/' + encuesta.id)">
+        <ion-label>
+          <h3>{{encuesta.titulo}}</h3>
+          <p>{{encuesta.subtitulo}}</p>
+          <p>Creada el {{encuesta.fechaCreada}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</div>

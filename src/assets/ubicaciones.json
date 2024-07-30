@@ -1,0 +1,21 @@
+{
+    "Ubicaciones":
+    [
+        {
+            "id": "1",
+            "nombre": "Ubicacion 1"
+        },
+        {
+            "id": "2",
+            "nombre": "Ubicacion 2"
+        },
+        {
+            "id": "3",
+            "nombre": "Ubicacion 3"
+        },
+        {
+            "id": "4",
+            "nombre": "Ubicacion 4"
+        }
+    ]
+}

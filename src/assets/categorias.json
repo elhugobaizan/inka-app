@@ -1,0 +1,47 @@
+{
+    "Categorias": [
+        {
+            "id": 1,
+            "nombre": "Alojamiento campamento",
+            "ubicaciones": [
+                {
+                    "id": 1,
+                    "nombre": "Confluencia"
+                },
+                {
+                    "id": 2,
+                    "nombre": "Plaza de mulas"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Transporte mulas",
+            "ubicaciones": [
+                {
+                    "id": 1,
+                    "nombre": "Plaza francia"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Comidas campamento",
+            "ubicaciones": [
+                {
+                    "id": 1,
+                    "nombre": "Penitentes"
+                },
+                {
+                    "id": 2,
+                    "nombre": "Altura"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "Transporte porter",
+            "ubicaciones": []
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+//Aca cambiamos los colores
+
+:root {
+  --ion-color-primary: #bd0000;
+  --ion-color-primary-rgb: 189, 0, 0;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #a60000;
+  --ion-color-primary-tint: #c41a1a;
+
+  --ion-color-secondary: #484a47;
+  --ion-color-secondary-rgb: 72, 74, 71;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #3f413e;
+  --ion-color-secondary-tint: #5a5c59;
+
+  --ion-color-tertiary: #5c6d70;
+  --ion-color-tertiary-rgb: 92, 109, 112;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #516063;
+  --ion-color-tertiary-tint: #6c7c7e;
+
+  --ion-color-success: #2dd55b;
+  --ion-color-success-rgb: 45, 213, 91;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #28bb50;
+  --ion-color-success-tint: #42d96b;
+
+  --ion-color-warning: #ffc409;
+  --ion-color-warning-rgb: 255, 196, 9;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0ac08;
+  --ion-color-warning-tint: #ffca22;
+
+  --ion-color-danger: #c5000f;
+  --ion-color-danger-rgb: 197, 0, 15;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #ad000d;
+  --ion-color-danger-tint: #cb1a27;
+
+  --ion-color-light: #fffaf;
+  --ion-color-light-rgb: 15, 255, 175;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #0de09a;
+  --ion-color-light-tint: #27ffb7;
+
+  --ion-color-medium: #d0ddd7;
+  --ion-color-medium-rgb: 208, 221, 215;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-shade: #b7c2bd;
+  --ion-color-medium-tint: #d5e0db;
+
+  --ion-color-dark: #2f2f2f;
+  --ion-color-dark-rgb: 47, 47, 47;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #292929;
+  --ion-color-dark-tint: #444444;
+}
+
+:root {
+  --ion-background-color: #eee;
+  --ion-background-color-rgb: 255, 255, 255;
+
+  --ion-text-color: #000000;
+  --ion-text-color-rgb: 0, 0, 0;
+
+  --ion-text-color-step-50: #0a0a0a;
+  --ion-text-color-step-100: #141414;
+  --ion-text-color-step-150: #1f1f1f;
+  --ion-text-color-step-200: #292929;
+  --ion-text-color-step-250: #333333;
+  --ion-text-color-step-300: #3d3d3d;
+  --ion-text-color-step-350: #474747;
+  --ion-text-color-step-400: #525252;
+  --ion-text-color-step-450: #5c5c5c;
+  --ion-text-color-step-500: #666666;
+  --ion-text-color-step-550: #707070;
+  --ion-text-color-step-600: #7a7a7a;
+  --ion-text-color-step-650: #858585;
+  --ion-text-color-step-700: #8f8f8f;
+  --ion-text-color-step-750: #999999;
+  --ion-text-color-step-800: #a3a3a3;
+  --ion-text-color-step-850: #adadad;
+  --ion-text-color-step-900: #b8b8b8;
+  --ion-text-color-step-950: #c2c2c2;
+
+  --ion-background-color-step-50: #c2c2c2;
+  --ion-background-color-step-100: #b8b8b8;
+  --ion-background-color-step-150: #adadad;
+  --ion-background-color-step-200: #a3a3a3;
+  --ion-background-color-step-250: #999999;
+  --ion-background-color-step-300: #8f8f8f;
+  --ion-background-color-step-350: #858585;
+  --ion-background-color-step-400: #7a7a7a;
+  --ion-background-color-step-450: #707070;
+  --ion-background-color-step-500: #666666;
+  --ion-background-color-step-550: #5c5c5c;
+  --ion-background-color-step-600: #525252;
+  --ion-background-color-step-650: #474747;
+  --ion-background-color-step-700: #3d3d3d;
+  --ion-background-color-step-750: #333333;
+  --ion-background-color-step-800: #292929;
+  --ion-background-color-step-850: #1f1f1f;
+  --ion-background-color-step-900: #141414;
+  --ion-background-color-step-950: #0a0a0a;
+}

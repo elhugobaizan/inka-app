@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "533979448150",
+    "project_id": "inka-d9e02",
+    "storage_bucket": "inka-d9e02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533979448150:android:ebcb1a686aca56ad2a0cf7",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcFnKwdfe-W7xCq8HwFN3dgJ5wGdmOhRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

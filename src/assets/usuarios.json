@@ -1,0 +1,34 @@
+{
+  "Usuarios": [
+    {
+      "id": 111,
+      "mail": "hb@mail.com",
+      "nombre": "Hugo Baizan",
+      "telefono": "2615178902"
+    },
+    {
+      "id": 222,
+      "mail": "mail@mail.com",
+      "nombre": "Usuario 1",
+      "telefono": "2615178902"
+    },
+    {
+      "id": 333,
+      "mail": "mail@mail.com",
+      "nombre": "Usuario 2",
+      "telefono": "2615178902"
+    },
+    {
+      "id": 444,
+      "mail": "mail@mail.com",
+      "nombre": "Usuario 3",
+      "telefono": "2615178902"
+    },
+    {
+      "id": 555,
+      "mail": "ou@mail.com",
+      "nombre": "Otro User",
+      "telefono": "2615178902"
+    }
+  ]
+  }

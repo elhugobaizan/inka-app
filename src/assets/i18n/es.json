@@ -1,0 +1,51 @@
+{
+    "login": {
+        "header": "login",
+        "titulo": "Escribi tu mail para entrar",
+        "subtitulo": "vamos a mandarte un codigo",
+        "accion": "Continuar",
+        "error": "Hay un error: "
+    },
+    "home": {
+        "header": "Inka Expediciones",
+        "saludo": "Hola",
+        "error": "Hay un error: "
+    },
+    "reclamos": {
+        "header": "Reclamos",
+        "titulo": "Coloque aqui su reclamo o sugerencia",
+        "accordion": [
+            {
+                "header": "Por servicio",
+                "select": {
+                    "servicio": {
+                        "selectPlaceHolder": "Elija servicio",
+                        "label": "Servicio"
+                    },
+                    "ubicacion": {
+                        "selectPlaceHolder": "Elija ubicacion",
+                        "label": "Ubicacion"
+                    }
+                }
+            },
+            {
+                "header": "Por guias",
+                "select": {
+                    "guia": {
+                        "selectPlaceHolder": "Elija guia",
+                        "label": "Guia"
+                    }
+                }
+            }
+        ],
+        "textarea": "Escriba su comentario aqui",
+        "accion": "Enviar",
+        "alert": {
+            "header": "El reclamo fue enviado",
+            "mensaje": "Alguien de nuestro equipo se esta haciendo cargo y respondera a la brevedad",
+            "buttonSi": "Nuevo reclamo",
+            "buttonNo": "Volver al inicio"
+        },
+        "error": "Hay un error: "
+    }
+}
