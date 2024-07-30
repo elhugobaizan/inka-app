@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
@@ -10,14 +10,18 @@ import guias from '../../assets/guias.json';
 import { Usuario } from './interfaces_precarga';
 import { TranslateService } from '@ngx-translate/core';
 import salida from '../../assets/salida.json';
+import { LowerCasePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InkaService {
 
-  //  private URL_API: string = 'http://192.168.100.4/api/';
-  private URL_API: string = 'http://localhost/api/';
+  private URL_API: string = 'https://APINKA_user:APIpwd2024@inkaturismo.com/API/';
+
+private httpHeader = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+//.set('Authorization','Basic ' + btoa("APINKA_user:APIpwd2024"));
+//.set('Access-Control-Allow-Origin','http://localhost/');
 
   constructor(
     private router: Router,
@@ -26,8 +30,9 @@ export class InkaService {
     private http: HttpClient
   ) { }
 
-  getI18Ntextos(pagina: string, idioma: string) {
-    let resTextos: any = null;
+getI18Ntextos(pagina: string, idioma: string) {
+  idioma = (idioma==="Ingles") ? "en" : "es";
+  let resTextos: any = null;
     this.translate.setDefaultLang(idioma);
     this.translate.use(idioma);
     this.translate.get(pagina).subscribe((textos) => {
@@ -51,11 +56,7 @@ export class InkaService {
   }
 
   validarUsuario(email: string = '') {
-    let usuarios: Usuario[] = data.Usuarios;
-    return of({ response: usuarios.filter((usuario) => { return usuario.mail == email }) });
-    /*      return this.http.post(this.URL_API + 'usuario', {
-          email: email
-        });  */
+    return this.http.get('http://localhost:3000/usuarios/', {'headers': this.httpHeader});
   }
 
   validarEmail(email: string) {
@@ -66,7 +67,7 @@ export class InkaService {
 
   getUsuario(id: number) {
     let usuarios: Usuario[] = data.Usuarios;
-    return of({ data: usuarios.filter((usuario) => { return usuario.id == id }) });
+    return of({ data: usuarios.filter((usuario) => { return usuario.id_cliente == id }) });
   }
 
   getCategorias() {

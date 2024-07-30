@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { InkaService } from '../utils/inka.service';
-import { IonInput, IonNote } from '@ionic/angular';
-import { TranslateService } from '@ngx-translate/core';
+import { InkaService } from '../utils/inka_mock.service';
+import { Usuario } from '../utils/interfaces_precarga';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +21,15 @@ export class LoginPage implements OnInit {
   public useremail: string = "";
   public invalidMail: boolean = false;
   public usuarios: any[] = [];
-  public usuarioVinculado: any = null;
+  public usuarioVinculado: Usuario = {
+    apellido: "",
+    id_cliente: 0,
+    id_salida: 0,
+    idioma: "",
+    mail: "",
+    nombre: "",
+    salida: ""
+  };
   public token: number = 0;
   public paso: number = 1;
 
@@ -33,8 +40,10 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
   }
   ionViewWillEnter() {
+    this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
   }
 
   enviarEmail() {
@@ -45,14 +54,14 @@ export class LoginPage implements OnInit {
       return;
     }
 
-    //2. enviar email al servidor y recibir respuesta
+    //2. enviar email al servidor y recibir respuesta  
     this.servicio.validarUsuario(this.useremail).subscribe({
-      next: (r) => {
+      next: (r: any) => {
         //3. parsear respuesta, opciones:
-        if (r.response.length == 0) {
+        if (r == "") {
           this.servicio.mostrarMensaje("el mail no existe", "danger");
         } else {
-          this.usuarios = r.response;
+          this.usuarios = JSON.parse(r) as Usuario[];
           if (this.usuarios.length == 1) {
             this.usuarioVinculado = this.usuarios[0];
           }
@@ -60,7 +69,7 @@ export class LoginPage implements OnInit {
         this.paso = 2;
       },
       error: (e) => {
-        console.log("Surgio un error: " + e);
+        this.servicio.mostrarMensaje("Surgio un error: "+ JSON.stringify(e, ["message", "statusText"]), "danger");
       }
     });
   }
@@ -75,7 +84,7 @@ export class LoginPage implements OnInit {
 
   //Manejo del radio group
   usuarioSeleccionado(ev: any) {
-    let resultado = this.usuarios.filter((usuario) => { return usuario.id == ev.target.value })
+    let resultado = this.usuarios.filter((usuario) => { return usuario.id_cliente == ev.target.value })
     if (resultado.length == 1) {
       this.usuarioVinculado = resultado[0];
       this.usuarios = [];
@@ -87,11 +96,11 @@ export class LoginPage implements OnInit {
 
   terminarProceso() {
     let loggedUser = {
-      token: this.usuarioVinculado.id,
+      token: this.usuarioVinculado.id_cliente,
       idioma: this.selectedLanguage
     }
-    localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
-    this.servicio.irA('home');
+    localStorage.setItem("loggedUser", JSON.stringify(this.usuarioVinculado));
+    this.servicio.irA('pages/home');
   }
   compareWith(o1: any, o2: any) {
     o1.id === o2.id;

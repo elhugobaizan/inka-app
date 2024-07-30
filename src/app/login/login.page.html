@@ -1,34 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-title>{{textos.header}}</ion-title>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="light" class="background">
+  <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button (click)="cambiarIdioma()">{{selectedLanguage=="es" ? "Ingles" : "Spanish"}}</ion-button>
+      <ion-img (click)="cambiarIdioma()" src='{{selectedLanguage=="es" ? "../../../../assets/united-kingdom.png" : "../../../assets/flag.png"}}'></ion-img>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" class="ion-padding" color="light">
   <ion-card-content>
     <!-- Ingresar mail -->
     <ng-container *ngIf="paso === 1">
-      <ion-card color="primary-contrast">
-        <ion-card-header>
-          <h2>{{textos.titulo}}</h2>
-          <p>
-            {{textos.subtitulo}}
-          </p>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-input [(ngModel)]="useremail" fill="outline" type="email" errorText="el mail es invalido"
-            #emailinput></ion-input>
-          <ion-note *ngIf="invalidMail == true" slot="error" color="danger" class="ion-hide">El mail no es
-            valido</ion-note>
+      <ion-row><ion-col>
+          <ion-img src="../../assets/Inka-04 1.png"></ion-img>
+      </ion-col></ion-row>
+      <ion-row><ion-col>
+        <div color="primary-contrast">
+          <ion-label>
+            <h2>{{textos.titulo}}</h2>
+            <p>{{textos.subtitulo}}</p>
+          </ion-label>
+          <ion-input [(ngModel)]="useremail" fill="outline" type="email" errorText="el mail es invalido" #emailinput></ion-input>
+          <ion-note *ngIf="invalidMail == true" slot="error" color="danger" class="ion-hide">
+            El mail no es valido
+          </ion-note>
           <br>
-        </ion-card-content>
-        <ion-button size="default" expand="block" (click)="enviarEmail()"
-          [disabled]="useremail == ''">{{textos.accion}}</ion-button>
-        <br>
-      </ion-card>
+          <ion-button size="default" expand="block" (click)="enviarEmail()"
+            [disabled]="useremail == ''">{{textos.accion}}</ion-button>
+          <br>
+        </div>
+      </ion-col></ion-row>
     </ng-container>
 
     <!-- Esperar por token-->
@@ -57,8 +55,8 @@
           <ion-list lines="none">
             <ion-radio-group (ionChange)="usuarioSeleccionado($event)">
               <ion-item *ngFor="let usuario of usuarios">
-                <ion-radio [value]="usuario.id" labelPlacement="end" color="primary"
-                  justify="start">{{usuario.nombre}}</ion-radio>
+                <ion-radio [value]="usuario.id_cliente" labelPlacement="end" color="primary"
+                  justify="start">{{usuario.nombre}} {{usuario.apellido}}</ion-radio>
               </ion-item>
             </ion-radio-group>
           </ion-list>

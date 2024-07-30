@@ -1,42 +1,21 @@
 <div class="ion-page">
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button default-href="home" color="primary"></ion-back-button>
-      </ion-buttons>
-      <ion-title color="primary">Tu salida</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <inka-header>
+      Tu salida - {{salida.descripcion}}
+  </inka-header>
 
   <ion-content [fullscreen]="true">
-    <ion-list *ngFor="let dia of salida.itinerario">
-      <ion-item button detail="true" (click)="openModal(dia.dia)" detail-icon="caret-forward-outline">
-        <ion-label>
-          <h3>DÍA {{dia.dia | number: '2.0-0'}} · {{dia.titulo}}</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label (click)="itinerario()">
+          <h3>Ver itinerario</h3>
         </ion-label>
+      </ion-item>
+      <ion-item>
+        <h3>Servicios</h3>
+      </ion-item>
+      <ion-item>
+        <h3>Guias</h3>
       </ion-item>
     </ion-list>
   </ion-content>
 </div>
-
-<ion-modal [isOpen]="isModalOpen" (willDismiss)="onWillDismiss($event)">
-  <ng-template>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>{{diaElegido.dia | number: '2.0-0' }} - {{diaElegido.titulo}}</ion-title>
-        <ion-buttons slot="end">
-          <ion-button (click)="cancelModal()">
-            <ion-icon name="close-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <div class="ion-text-wrap">
-        <p>
-          {{diaElegido.detalle}}
-        </p>
-      </div>
-    </ion-content>
-  </ng-template>
-</ion-modal>

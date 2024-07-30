@@ -1,39 +1,31 @@
 <div class="ion-page">
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button default-href="home" color="primary"></ion-back-button>
-      </ion-buttons>
-      <ion-title color="primary">Encuestas</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <inka-header clase="secundario" (backClicked)="irA('pages/home')">Encuestas</inka-header>
   <ion-content [fullscreen]="true">
-    <ion-list *ngFor="let encuesta of encuestas">
-      <ion-item button detail="true" detail-icon="caret-forward-outline" (click)="irA('pages/encuesta/' + encuesta.id)">
+    <h5>Sus respuestas nos ayudan a blabla</h5>
+    <ion-list *ngFor="let encuesta of encuestas" lines="none">
+      <ion-item class="encuesta" (click)="irA('pages/encuesta/' + encuesta.id)">
         <ion-label>
-          <h3>{{encuesta.titulo}}</h3>
-          <p>{{encuesta.subtitulo}}</p>
-          <p>Creada el {{encuesta.fechaCreada}}</p>
+          {{encuesta.titulo}}
+          <br>
+          <ion-note>Creada el {{encuesta.fechaCreada}}</ion-note>
         </ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
       </ion-item>
-    </ion-list>
-    <ion-list *ngFor="let encuesta of encuestas">
-      <ion-item button detail="true" detail-icon="caret-forward-outline" (click)="irA('pages/encuesta/' + encuesta.id)">
+      <ion-item class="encuesta" (click)="irA('pages/encuesta/' + encuesta.id)">
         <ion-label>
-          <h3>{{encuesta.titulo}}</h3>
-          <p>{{encuesta.subtitulo}}</p>
-          <p>Creada el {{encuesta.fechaCreada}}</p>
+          {{encuesta.titulo}}
+          <br>
+          <ion-note>Creada el {{encuesta.fechaCreada}}</ion-note>
         </ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
       </ion-item>
-    </ion-list>
-    <ion-list *ngFor="let encuesta of encuestas">
-      <ion-item button detail="true" detail-icon="caret-forward-outline" (click)="irA('pages/encuesta/' + encuesta.id)">
+      <ion-item class="encuesta disabled">
         <ion-label>
-          <h3>{{encuesta.titulo}}</h3>
-          <p>{{encuesta.subtitulo}}</p>
-          <p>Creada el {{encuesta.fechaCreada}}</p>
+          Servicios de Mendoza
+          <br>
+          <ion-note>Respondida el 20/07/2024</ion-note>
         </ion-label>
+        <ion-icon slot="end" name="checkmark-sharp"></ion-icon>
       </ion-item>
     </ion-list>
   </ion-content>

@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="primario">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title">
+      {{textos ? textos.saludo : ""}} {{usuario == null ? "" : usuario.nombre}}!
+    </ion-title>
+    <div class="header" slot="primary">
+      <ion-img src="../../../assets/Inka_blanco.svg"></ion-img>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" *ngIf="this.usuario != null" class="background">
+  <div class="content">
+    <inka-expedition encabezado="Your next adventure"
+      imagen="../../assets/aconcagua-normal-route.png" 
+      titulo="Aconcagua" 
+      subtitulo="Normal route" 
+      (actionClicked)="irA('pages/salida/1')" accion="+ Info">
+      START: Nov 23rd 2024
+      <br>
+      END: Dec 11th 2024
+    </inka-expedition>
+    <inka-survey-item
+      imagen="../../assets/bookmark.png" 
+      titulo="Mendoza/Penitentes" 
+      subtitulo="services in" 
+      icono="chevron-forward-outline"></inka-survey-item>
+      <inka-survey-question>
+        En general, ¿qué tan amigables fueron los miembros del personal del campamento Plaza de Mulas?
+      </inka-survey-question>
+  </div>
+</ion-content>
+<ion-content [fullscreen]="true" *ngIf="this.usuario == null">
+  <ion-card>
+    <ion-card-title>
+      No esta logueado!
+    </ion-card-title>
+    <ion-card-subtitle>
+      Por favor loguearse para seguir
+    </ion-card-subtitle>
+    <ion-card-content>
+      <ion-button (click)="irA('/login')">Ir a Login</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

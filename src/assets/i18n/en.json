@@ -3,6 +3,53 @@
         "header": "login",
         "titulo": "Write your email to access",
         "subtitulo": "we're sending you a code",
-        "accion": "Continue"
+        "accion": "Continue",
+        "error": "There is an error: "
+    },
+    "home": {
+        "header": "Inka Expeditions",
+        "saludo": "Hi",
+        "error": "There is an error: ",
+        "tusalida": "Expedition",
+        "encuestas": "Surveys",
+        "reclamos": "Complaints",
+        "accioncard": "More"
+    },
+    "reclamos": {
+        "header": "Reclamos",
+        "titulo": "Coloque aqui su reclamo o sugerencia",
+        "accordion": [
+            {
+                "header": "Por servicio",
+                "select": {
+                    "servicio": {
+                        "selectPlaceHolder": "Elija servicio",
+                        "label": "Servicio"
+                    },
+                    "ubicacion": {
+                        "selectPlaceHolder": "Elija ubicacion",
+                        "label": "Ubicacion"
+                    }
+                }
+            },
+            {
+                "header": "Por guias",
+                "select": {
+                    "guia": {
+                        "selectPlaceHolder": "Elija guia",
+                        "label": "Guia"
+                    }
+                }
+            }
+        ],
+        "textarea": "Escriba su comentario aqui",
+        "accion": "Enviar",
+        "alert": {
+            "header": "El reclamo fue enviado",
+            "mensaje": "Alguien de nuestro equipo se esta haciendo cargo y respondera a la brevedad",
+            "buttonSi": "Nuevo reclamo",
+            "buttonNo": "Volver al inicio"
+        },
+        "error": "Hay un error: "
     }
 }

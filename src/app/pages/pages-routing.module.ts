@@ -6,8 +6,17 @@ import { PagesPage } from './pages.page';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },  
+  {
+    path: '',
     component: PagesPage,
     children: [
+      {
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+      },
       {
         path: 'encuestas',
         loadChildren: () => import('./encuestas/encuestas.module').then(m => m.EncuestasPageModule)
@@ -20,10 +29,6 @@ const routes: Routes = [
         path: 'salida/:id',
         loadChildren: () => import('./salida/salida.module').then(m => m.SalidaPageModule)
       }
-      /*{
-        path: 'salidas',
-        loadChildren: () => import('./salidas/salidas.module').then(m => m.SalidasPageModule)
-      }*/
     ]
   }
 ];

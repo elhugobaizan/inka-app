@@ -18,8 +18,8 @@ export class TranslationComponent  implements OnInit {
 
   ngOnInit() {}
 
-  public cambiarLenguaje(lang: string) {
+  public async cambiarLenguaje(lang: string) {
     this.activeLang = lang;
-    this.translate.use(lang);
+    await this.translate.use(lang).toPromise();
   }
 }

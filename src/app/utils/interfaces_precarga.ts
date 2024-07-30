@@ -12,14 +12,17 @@ export interface Ubicacion {
 }
 
 export interface Usuario {
-    id: number,
+    id_cliente: number,
     mail: string,
     nombre: string,
-    telefono: string
+    apellido: string,
+    idioma: string,
+    id_salida: number,
+    salida: string
 }
 
 export interface Salida {
-    id: string,
+    id: number,
     descripcion: string,
     itinerario: {
         dia: number,

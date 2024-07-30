@@ -1,0 +1,28 @@
+<ion-card id="inka-novedad">
+  <ion-card-content>
+    <ion-row>
+      <ion-col size="5">
+        <ion-img src="{{imagen}}"></ion-img>
+      </ion-col>
+      <ion-col>
+        <ion-row><ion-col class="encabezado">
+          {{encabezado}}
+        </ion-col></ion-row>
+        <ion-row><ion-col class="titulo">
+          {{titulo}}
+        </ion-col></ion-row>
+        <ion-row><ion-col class="subtitulo">
+          {{subtitulo}}
+        </ion-col></ion-row>
+        <ion-row><ion-col>
+          <ion-note class="texto">
+            <ng-content></ng-content>
+          </ion-note>      
+        </ion-col></ion-row>
+        <ion-row><ion-col class="accion">
+          <a (click)="onClick()">{{accion}}</a>
+        </ion-col></ion-row>
+      </ion-col>
+  </ion-row>
+  </ion-card-content>
+</ion-card>

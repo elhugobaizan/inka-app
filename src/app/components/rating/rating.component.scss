@@ -1,3 +1,10 @@
-ion-icon {
-  height: 5em !important;
+ion-grid {
+  width: fit-content;
+  ion-row {
+    margin-left: 5px;
+    margin-right: 5px;
+    ion-col {
+      height: 36px !important;
+    }
+  }
 }

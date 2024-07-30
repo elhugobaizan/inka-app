@@ -35,9 +35,6 @@ export class AppComponent {
     private router: Router,
     private platform: Platform
   ) {
-    translate.addLangs(['en', 'es']);
-    translate.setDefaultLang('es');
-    translate.use('es');
   }
 
   ngOnInit(): void {
@@ -47,6 +44,9 @@ export class AppComponent {
       if (e instanceof ActivationStart && e.snapshot.outlet === "administration" && this.outlet != undefined)
         this.outlet.deactivate();
     });
+    this.translate.addLangs(['en', 'es']);
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');
   }
 
   private _getDeviceToken(): void {
@@ -87,32 +87,7 @@ export class AppComponent {
     });
   }
 
-  requestPermission(): Promise<void> {
-    return new Promise<void>(async (resolve) => {
-      if (!Notification) {
-        resolve();
-        return;
-      }
-      if (!isSupported()) {
-        resolve();
-        return;
-      }
-      try {
-        await this.requestPermission();
-
-        const token: string = await getToken(this._messaging);
-
-        console.log('User notifications token:', token);
-      } catch (err) {
-        // No notifications granted
-      }
-
-      resolve();
-    });
-  }
-
   ngAfterViewInit() {
-    this.platform.ready().then(async () => { await this.requestPermission() })
     this.usuario = localStorage.getItem("loggedUser");
     console.log(this.usuario);
   }

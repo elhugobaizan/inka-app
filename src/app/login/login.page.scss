@@ -1,3 +1,9 @@
-ion-card {
-    width: 100%;
+ion-content.background {
+    --background: url("../../assets/ACONCAGUA 23_599 1.png")  -60px bottom/500px 200px no-repeat;
+
+    ion-img {
+        width: 120px;
+        height: 120px;
+        margin: auto;
+    }
 }

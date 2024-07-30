@@ -1,24 +1,12 @@
 <div class="ion-page">
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button default-href="pages/encuestas" color="primary"></ion-back-button>
-      </ion-buttons>
-      <ion-title color="primary">Encuesta</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <inka-header clase="secundario" atras="pages/encuestas">
+    Encuesta
+  </inka-header>
 
   <ion-content [fullscreen]="true">
+    <h5>{{encuesta.titulo}}</h5>
+    <h6>{{encuesta.subtitulo}}</h6>
     <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>
-          <h1><strong>{{encuesta.titulo}}</strong></h1>
-          <br>
-          <ion-text>
-            {{encuesta.subtitulo}}
-          </ion-text>
-        </ion-label>
-      </ion-list-header>
       <ion-item-sliding *ngFor="let pregunta of encuesta.preguntas">
         <ion-item>
           <ion-label>

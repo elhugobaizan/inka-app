@@ -1,0 +1,48 @@
+ion-toolbar {
+    ion-title {
+        font-size: 0.9rem;
+    }
+
+    ion-buttons {
+        ion-icon {
+            width: 16px;
+            height: 16px;
+            padding-left: 12px;  
+        }
+    }
+
+    div.header{
+        padding-right: 10px;
+        
+        ion-img {
+          width: 64px;
+          height: 64px;
+        }
+    } 
+    
+    &.secundario {
+        --background: var(--ion-background-color-step-50) !important;
+        --color: var(--ion-text-color-step-50);
+
+        div.header{            
+            ion-img {
+              filter: invert(58%) sepia(58%) saturate(1936%) hue-rotate(320deg) brightness(100%) contrast(87%);
+              fill: #ED7167;
+            }
+        } 
+    
+    }
+
+    &.primario {
+        --background: var(--ion-color-primary) !important;
+        --color: var(--ion-color-primary-contrast);
+
+        div.header{            
+            ion-img {
+                //filter: invert(100%) sepia(0%) saturate(7476%) hue-rotate(66deg) brightness(105%) contrast(98%);
+                fill: var(--ion-color-primary-contrast);
+            }
+        } 
+    
+    }
+}

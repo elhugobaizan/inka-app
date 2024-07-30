@@ -1,0 +1,71 @@
+<div class="ion-page">
+  <inka-header clase="secundario" atras="pages/reclamos">
+    {{textos.header}}
+  </inka-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-list lines="none">
+      <ion-list-header>
+        {{textos.titulo}}
+      </ion-list-header>
+      <ion-item-sliding>
+        <ion-accordion-group #accordionGroup (ionChange)="changeAcordeon($event)">
+          <ion-accordion value="servicios">
+            <ion-item slot="header">{{textos.accordion[0].header}}</ion-item>
+            <div class="ion-padding" slot="content">
+              <ion-item id="select-servicio">
+                <ion-select justify="start" interface="popover"
+                  placeholder="{{textos.accordion[0].select.servicio.selectPlaceHolder}}"
+                  [(ngModel)]="reclamo.categoriaId" (ionChange)="fillUbicaciones(reclamo.categoriaId)">
+                  <div slot="label">{{textos.accordion[0].select.servicio.label}} <ion-text color="danger">*</ion-text>
+                  </div>
+                  <ion-select-option *ngFor="let categoria of categorias" [value]="categoria.id">
+                    {{categoria.nombre}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+              <ion-item id="select-ubicacion" *ngIf="ubicaciones.length > 1">
+                <ion-select justify="start" interface="popover"
+                  placeholder="{{textos.accordion[0].select.ubicacion.selectPlaceHolder}}"
+                  [(ngModel)]="reclamo.ubicacionId">
+                  <div slot="label">{{textos.accordion[0].select.ubicacion.label}} <ion-text color="danger">*</ion-text>
+                  </div>
+                  <ion-select-option *ngFor="let ubicacion of ubicaciones" [value]="ubicacion.id">
+                    {{ubicacion.nombre}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </ion-accordion>
+          <ion-accordion value="guias">
+            <ion-item slot="header">{{textos.accordion[1].header}}</ion-item>
+            <div class="ion-padding" slot="content">
+              <ion-item id="select-guia">
+                <ion-select justify="start" interface="popover"
+                  placeholder="{{textos.accordion[1].select.guia.selectPlaceHolder}}" [(ngModel)]="reclamo.guiaId">
+                  <div slot="label">{{textos.accordion[1].select.guia.label}} <ion-text color="danger">*</ion-text>
+                  </div>
+                  <ion-select-option *ngFor="let guia of guias" [value]="guia.id">
+                    {{guia.nombre}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+        <ion-item>
+          <ion-textarea [(ngModel)]="reclamo.texto" fill="outline" placeholder="{{textos.textarea}}">
+          </ion-textarea>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-button (click)="enviarReclamo()" expand="block" size="default" slot="end">{{textos.accion}}</ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-alert [isOpen]="reclamoEnviado" header="{{textos.alert.header}}" message="{{textos.alert.mensaje}}"
+      [buttons]="alertButtons" (didDismiss)="nuevoReclamo()"></ion-alert>
+  </ion-content>
+</div>

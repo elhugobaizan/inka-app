@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "e8123597-1352-4963-8e54-c17bacbcf497",
+		"name": "APINKA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4545538"
+	},
+	"item": [
+		{
+			"name": "ClienteEmail",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "APIpwd2024",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "APINKA_user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "function",
+							"value": "ClienteEmail",
+							"type": "text"
+						},
+						{
+							"key": "Email",
+							"value": "luxburg@hotmail.de",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://inkaturismo.com/API/",
+					"protocol": "https",
+					"host": [
+						"inkaturismo",
+						"com"
+					],
+					"path": [
+						"API",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "APIpwd2024",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "APINKA_user",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

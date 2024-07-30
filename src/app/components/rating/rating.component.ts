@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 enum COLORS {
-  grey = "#A0A0A0",
-  green = "red",
-  yellow = "red",
-  red = "red"
+  white = "#FFFFFF",
+  green = "#fcf112",
+  yellow = "#fcf112",
+  red = "#fcf112",
+  black = "#000000"
 }
 
 @Component({
@@ -32,21 +33,35 @@ export class RatingComponent implements OnInit {
     this.ratingChange.emit(this.rating);
   }
 
-  getColor(index: number) {
+  getStroke(index: number) {
     if (this.isAboveRating(index)) {
-      return COLORS.grey;
+      return COLORS.black;
     }
     switch (this.rating) {
       case 1:
       case 2:
-        return COLORS.red;
       case 3:
-        return COLORS.yellow;
+      case 4:
+      case 5:
+        return COLORS.white;
+      default:
+        return COLORS.black;
+    }
+  }
+
+  getColor(index: number) {
+    if (this.isAboveRating(index)) {
+      return COLORS.white;
+    }
+    switch (this.rating) {
+      case 1:
+      case 2:
+      case 3:
       case 4:
       case 5:
         return COLORS.green;
       default:
-        return COLORS.grey;
+        return COLORS.white;
     }
     /* function to return the color of a star based on what
      index it is. All stars greater than the index are assigned

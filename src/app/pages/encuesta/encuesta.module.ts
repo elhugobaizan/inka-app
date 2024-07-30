@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EncuestaPageRoutingModule } from './encuesta-routing.module';
 import { EncuestaPage } from './encuesta.page';
 import { RatingComponent } from 'src/app/components/rating/rating.component';
+import { InkaHeaderComponent } from 'src/app/components/inka-header/inka-header.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { RatingComponent } from 'src/app/components/rating/rating.component';
     FormsModule,
     IonicModule,
     EncuestaPageRoutingModule,
-    RatingComponent
+    RatingComponent,
+    InkaHeaderComponent
   ],
   declarations: [EncuestaPage]
 })

@@ -6,7 +6,7 @@ const logueado = JSON.parse(localStorage.getItem("loggedUser") || "false");
 
 if (logueado) {
   //esta logueado
-  route = "home"
+  route = "pages"
 } else {
   //no esta logueado
   route = "login"
@@ -14,7 +14,7 @@ if (logueado) {
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -32,6 +32,10 @@ const routes: Routes = [
   {
     path: 'pages/encuesta/:id',
     loadChildren: () => import('./pages/encuesta/encuesta.module').then(m => m.EncuestaPageModule)
+  },
+  {
+    path: 'pages/reclamo',
+    loadChildren: () => import('./pages/reclamo/reclamo.module').then(m => m.ReclamoPageModule)
   }
 ];
 

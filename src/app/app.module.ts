@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { RatingComponent } from 'src/app/components/rating/rating.component';
 import { CUSTOM_ELEMENTS_SCHEMA, isDevMode } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
@@ -24,7 +23,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [RatingComponent, BrowserModule, IonicModule.forRoot(), AppRoutingModule, TranslateModule.forRoot(), HttpClientModule,
+  imports: [
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule, TranslateModule.forRoot(), HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

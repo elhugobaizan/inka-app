@@ -1,34 +1,49 @@
 {
   "Usuarios": [
     {
-      "id": 111,
+      "id_cliente": 111,
       "mail": "hb@mail.com",
       "nombre": "Hugo Baizan",
-      "telefono": "2615178902"
+      "apellido": "",
+      "idioma":"Ingles",
+      "id_salida":2086,
+      "salida":"GPN05 Alexander - Yulia"
     },
     {
-      "id": 222,
+      "id_cliente": 222,
       "mail": "mail@mail.com",
       "nombre": "Usuario 1",
-      "telefono": "2615178902"
+      "apellido": "",
+      "idioma":"Ingles",
+      "id_salida":2086,
+      "salida":"GPN05 Alexander - Yulia"
     },
     {
-      "id": 333,
+      "id_cliente": 333,
       "mail": "mail@mail.com",
       "nombre": "Usuario 2",
-      "telefono": "2615178902"
+      "apellido": "",
+      "idioma":"Ingles",
+      "id_salida":2086,
+      "salida":"GPN05 Alexander - Yulia"
     },
     {
-      "id": 444,
+      "id_cliente": 444,
       "mail": "mail@mail.com",
       "nombre": "Usuario 3",
-      "telefono": "2615178902"
+      "apellido": "",
+      "idioma":"Ingles",
+      "id_salida":2086,
+      "salida":"GPN05 Alexander - Yulia"
     },
     {
-      "id": 555,
+      "id_cliente": 555,
       "mail": "ou@mail.com",
       "nombre": "Otro User",
-      "telefono": "2615178902"
+      "apellido": "",
+      "idioma":"Ingles",
+      "id_salida":2086,
+      "salida":"GPN05 Alexander - Yulia"
     }
   ]
   }

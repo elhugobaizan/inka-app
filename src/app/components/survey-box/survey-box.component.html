@@ -1,0 +1,20 @@
+<ion-card id="inka-encuesta-resumen">
+  <ion-card-content>
+    <ion-row>
+      <ion-col size="2" class="imagen">
+        <ion-img src="{{imagen}}"></ion-img>
+      </ion-col>
+      <ion-col>
+        <ion-row><ion-col class="subtitulo">
+          {{subtitulo}}
+        </ion-col></ion-row>
+        <ion-row><ion-col class="titulo">
+          {{titulo}}
+        </ion-col></ion-row>
+      </ion-col>
+      <ion-col class="accion">
+        <ion-icon name="{{icono}}" (click)="onClick()"></ion-icon>
+      </ion-col>
+</ion-row>
+  </ion-card-content>
+</ion-card>
