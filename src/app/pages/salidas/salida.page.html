@@ -1,0 +1,33 @@
+<div class="ion-page">
+  <inka-header clase="primario">
+      {{salida.descripcion}}
+  </inka-header>
+
+<ion-content [fullscreen]="true" class="background">
+  <ion-title>Aconcagua - Normal Route</ion-title>
+  <div class="content">
+    <inka-survey-item imagen="../../../assets/calendar.svg" titulo="no se que" subtitulo="Start: Nov 23rd 2024, End: Dec 11th 2024"></inka-survey-item>
+    <ion-row>
+      <ion-col size="6">
+        <inka-button titulo="Servicios" imagen="../../../assets/itinerario.svg" (actionClicked)="itinerario()"></inka-button>
+      </ion-col>
+      <ion-col size="6">
+        <inka-button titulo="Guias" imagen="../../../assets/guias.svg" (actionClicked)="itinerario()"></inka-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <inka-survey-item titulo="Itinerario" imagen="../../../assets/itinerario.svg" (actionClicked)="itinerario()"></inka-survey-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <inka-button titulo="Guias" imagen="../../../assets/guias.svg" (actionClicked)="itinerario()"></inka-button>
+      </ion-col>
+      <ion-col size="6">
+        <inka-button titulo="Guias" imagen="../../../assets/guias.svg" (actionClicked)="itinerario()"></inka-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  </ion-content>
+</div>

@@ -7,7 +7,7 @@
       <ng-content></ng-content>
     </ion-title>
     <div class="header" slot="primary">
-      <ion-img src="../../assets/Inka_blanco.svg"></ion-img>
+      <ion-img src="../../assets/Inka_sin_color.svg" [ngStyle]="{'fill':clase=='primario' ? '#FFFFFF' : '#000000', 'stroke':clase=='primario' ? '#FFFFFF' : '#000000'}"></ion-img>
     </div>  
   </ion-toolbar>
 </ion-header>

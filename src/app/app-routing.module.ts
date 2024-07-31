@@ -31,11 +31,15 @@ const routes: Routes = [
   },
   {
     path: 'pages/encuesta/:id',
-    loadChildren: () => import('./pages/encuesta/encuesta.module').then(m => m.EncuestaPageModule)
+    loadChildren: () => import('./pages/encuestas/encuesta.module').then(m => m.EncuestaPageModule)
   },
   {
     path: 'pages/reclamo',
-    loadChildren: () => import('./pages/reclamo/reclamo.module').then(m => m.ReclamoPageModule)
+    loadChildren: () => import('./pages/reclamos/reclamo.module').then(m => m.ReclamoPageModule)
+  },
+  {
+    path: 'pages/itinerario/:id',
+    loadChildren: () => import('./pages/salidas/itinerario.module').then(m => m.ItinerarioPageModule)
   }
 ];
 

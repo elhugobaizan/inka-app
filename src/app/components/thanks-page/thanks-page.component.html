@@ -1,0 +1,26 @@
+<div class="ion-page">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancelModal()">Cancel</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-content [fullscreen]="true">
+    <div class="content">
+      <h5>Thank you for your Feedback!</h5>
+      <h6></h6>
+      <ion-label>
+        We greatly appreciate you taking the time to complete our survey.
+        Your insights are invaluable to us, and they help us enhance our services to better meet your needs.
+        As a token of our gratitude, we are excited to offer you a special gift!
+        Please enjoy this as our way of saying thank you for your valuable feedback.
+      </ion-label>
+      <inka-expedition encabezado="Gift coupon"
+        imagen="../../assets/aconcagua-normal-route.png" 
+        titulo="Free cofee in" 
+        subtitulo="Aconcagua Cafe" 
+        accion="Download coupon">
+        Available in Confluencia or Plaza de Mulas Camps.
+      </inka-expedition>
+    </div>  
+  </ion-content>
+</div>

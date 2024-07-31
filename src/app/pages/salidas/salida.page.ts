@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AnimationController, IonModal } from '@ionic/angular';
+
 import { Salida, Usuario } from '../../utils/interfaces_precarga';
 import { InkaService } from 'src/app/utils/inka.service';
-import { AnimationController, IonModal } from '@ionic/angular';
-import { OverlayEventDetail } from '@ionic/core/components';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-salida',
@@ -51,6 +51,6 @@ export class SalidaPage implements OnInit {
   }
 
   itinerario() {
-    this.servicio.irA(`pages/salida/${this.salida.id}`);
+    this.servicio.irA(`pages/itinerario/${this.salida.id}`);
   }
 }

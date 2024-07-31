@@ -27,7 +27,7 @@ const routes: Routes = [
       },
       {
         path: 'salida/:id',
-        loadChildren: () => import('./salida/salida.module').then(m => m.SalidaPageModule)
+        loadChildren: () => import('./salidas/salida.module').then(m => m.SalidaPageModule)
       }
     ]
   }

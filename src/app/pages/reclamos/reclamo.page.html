@@ -64,8 +64,5 @@
         <ion-button (click)="enviarReclamo()" expand="block" size="default" slot="end">{{textos.accion}}</ion-button>
       </ion-item>
     </ion-list>
-
-    <ion-alert [isOpen]="reclamoEnviado" header="{{textos.alert.header}}" message="{{textos.alert.mensaje}}"
-      [buttons]="alertButtons" (didDismiss)="nuevoReclamo()"></ion-alert>
   </ion-content>
 </div>

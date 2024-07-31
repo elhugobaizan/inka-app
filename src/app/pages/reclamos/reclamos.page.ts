@@ -21,6 +21,12 @@ export class ReclamosPage implements OnInit {
   }
 
   ngOnInit() {
+    this.textos = this.servicio.getI18Ntextos("reclamos", this.loggedUser.idioma);
+  }
+
+
+  ionViewWillEnter() {
+    this.textos = this.servicio.getI18Ntextos("reclamos", this.loggedUser.idioma);
   }
 
   irA(path: string) {

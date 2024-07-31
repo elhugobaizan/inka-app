@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Categoria, Ubicacion, Guia } from '../../utils/interfaces_precarga';
 import { ESTADORECLAMO, Reclamo } from '../../utils/interfaces-app';
 import { InkaService } from 'src/app/utils/inka.service';
+import { ModalController } from '@ionic/angular';
+import { ThanksPageComponent } from 'src/app/components/thanks-page/thanks-page.component';
 
 @Component({
   selector: 'app-reclamo',
@@ -28,12 +30,12 @@ export class ReclamoPage implements OnInit {
   public alertButtons: any = null;
 
   constructor(
-    private servicio: InkaService
+    private servicio: InkaService,
+    private modalController: ModalController
   ) {
     this.loggedUser = JSON.parse(localStorage.getItem("loggedUser") || "{undefined}");
     this.nuevoReclamo();
     this.textos = this.servicio.getI18Ntextos("reclamos", this.loggedUser.idioma);
-    this.generarAlert();
   }
 
   ngOnInit() {
@@ -56,23 +58,6 @@ export class ReclamoPage implements OnInit {
     });
   }
 
-  generarAlert() {
-    this.alertButtons = [
-      {
-        text: this.textos.alert.buttonSi,
-        handler: () => {
-          this.nuevoReclamo();
-          this.reclamoEnviado = false;
-        }
-      }, {
-        text: this.textos.alert.buttonNo,
-        handler: () => {
-          this.nuevoReclamo();
-          this.irA('home');
-        }
-      }];
-  }
-
   nuevoReclamo() {
     this.reclamoEnviado = false;
     this.reclamo = {
@@ -90,7 +75,9 @@ export class ReclamoPage implements OnInit {
 
   enviarReclamo() {
     console.log("Enviando este reclamo: " + JSON.stringify(this.reclamo));
+    //this.servicio.nuevoReclamo(this.reclamo);
     this.reclamoEnviado = true;
+    this.openModal();
   }
 
   irA(path: string) {
@@ -110,5 +97,12 @@ export class ReclamoPage implements OnInit {
     } else {
       console.log(this.textos.error + "Accordion onChange, " + event.detail.value);
     }
+  }
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ThanksPageComponent
+    });
+    modal.present();
   }
 }

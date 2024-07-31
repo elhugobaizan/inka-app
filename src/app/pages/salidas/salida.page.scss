@@ -1,0 +1,28 @@
+ion-modal ion-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.0125em;
+    color: var(--ion-color-primary);
+}
+
+ion-content.background {
+    --background: url("../../../assets/aconcagua-normal-route.png")  -60px 50px/500px 200px no-repeat;
+}
+
+.content {
+    position: absolute;
+    top: 200px;
+}
+
+ion-title {
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 0.9rem;
+}
