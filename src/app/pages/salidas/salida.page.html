@@ -6,26 +6,26 @@
 <ion-content [fullscreen]="true" class="background">
   <ion-title>Aconcagua - Normal Route</ion-title>
   <div class="content">
-    <inka-survey-item imagen="../../../assets/calendar.svg" titulo="no se que" subtitulo="Start: Nov 23rd 2024, End: Dec 11th 2024"></inka-survey-item>
+    <inka-card-button imagen="../../../assets/calendar.svg" titulo="no se que" subtitulo="Start: Nov 23rd 2024, End: Dec 11th 2024"></inka-card-button>
     <ion-row>
       <ion-col size="6">
-        <inka-button titulo="Servicios" imagen="../../../assets/itinerario.svg" (actionClicked)="itinerario()"></inka-button>
+        <inka-button titulo="Participantes" imagen="../../../assets/itinerario.svg" (actionClicked)="irA('participantes')"></inka-button>
       </ion-col>
       <ion-col size="6">
-        <inka-button titulo="Guias" imagen="../../../assets/guias.svg" (actionClicked)="itinerario()"></inka-button>
+        <inka-button titulo="Guias" imagen="../../../assets/guias.svg" (actionClicked)="irA('guias')"></inka-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="12">
-        <inka-survey-item titulo="Itinerario" imagen="../../../assets/itinerario.svg" (actionClicked)="itinerario()"></inka-survey-item>
+        <inka-card-button titulo="Itinerario" imagen="../../../assets/itinerario.svg" (cardClicked)="irA('itinerario')"></inka-card-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="6">
-        <inka-button titulo="Guias" imagen="../../../assets/guias.svg" (actionClicked)="itinerario()"></inka-button>
+        <inka-button titulo="Servicios" imagen="../../../assets/guias.svg" (actionClicked)="irA('servicios')"></inka-button>
       </ion-col>
       <ion-col size="6">
-        <inka-button titulo="Guias" imagen="../../../assets/guias.svg" (actionClicked)="itinerario()"></inka-button>
+        <inka-button titulo="Extras" imagen="../../../assets/guias.svg" (actionClicked)="irA('extras')"></inka-button>
       </ion-col>
     </ion-row>
   </div>

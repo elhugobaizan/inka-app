@@ -5,6 +5,11 @@ ion-card {
 
     ion-card-content {
         padding: 8px;
+
+        ion-row {
+            display: flex;
+            align-items: center;
+        }
     }
     
     ion-row {
@@ -13,7 +18,7 @@ ion-card {
             color: var(--ion-text-color);
             font-weight: 700;
             text-transform: uppercase;
-
+            
             &.imagen {
                 align-content: center;
             }

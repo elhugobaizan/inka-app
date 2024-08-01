@@ -40,6 +40,20 @@ const routes: Routes = [
   {
     path: 'pages/itinerario/:id',
     loadChildren: () => import('./pages/salidas/itinerario.module').then(m => m.ItinerarioPageModule)
+  },
+  {
+    path: 'blank',
+    loadComponent: () => import('./components/thanks-page/thanks-page.component').then(m => m.ThanksPageComponent)
+  },
+  {
+    path: 'pages/participantes/:id',
+    redirectTo: 'blank',
+    pathMatch: 'full'
+  },
+  {
+    path: 'pages/guias/:id',
+    redirectTo: 'blank',
+    pathMatch: 'full'
   }
 ];
 

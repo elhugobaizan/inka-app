@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { InkaService } from '../utils/inka_mock.service';
 import { Usuario } from '../utils/interfaces_precarga';
+import { ActivationStart, Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +9,14 @@ import { Usuario } from '../utils/interfaces_precarga';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  @ViewChild(RouterOutlet) outlet: RouterOutlet | undefined;
 
   //i18n
   public textos: any = null;
   public selectedLanguage = 'es';
 
-  cambiarIdioma() {
-    this.selectedLanguage = this.selectedLanguage == 'es' ? 'en' : 'es';
+  cambiarIdioma(lang: string) {
+    this.selectedLanguage = lang;
     this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
   }
 
@@ -30,20 +32,25 @@ export class LoginPage implements OnInit {
     nombre: "",
     salida: ""
   };
-  public token: number = 0;
+  public token: string = '';
   public paso: number = 1;
 
   constructor(
-    private servicio: InkaService
+    private servicio: InkaService,
+    private router: Router,
   ) {
-    this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
+    //this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
   }
 
   ngOnInit() {
-    this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
+    //this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
+    this.router.events.subscribe(e => {
+      if (e instanceof ActivationStart && e.snapshot.outlet === "administration" && this.outlet != undefined)
+        this.outlet.deactivate();
+    });
   }
   ionViewWillEnter() {
-    this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
+    //this.textos = this.servicio.getI18Ntextos("login", this.selectedLanguage);
   }
 
   enviarEmail() {
@@ -59,7 +66,7 @@ export class LoginPage implements OnInit {
       next: (r: any) => {
         //3. parsear respuesta, opciones:
         if (r == "") {
-          this.servicio.mostrarMensaje("el mail no existe", "danger");
+          this.servicio.mostrarMensaje("The e-mail doesn't exist", "danger");
         } else {
           this.usuarios = JSON.parse(r) as Usuario[];
           if (this.usuarios.length == 1) {
@@ -69,7 +76,7 @@ export class LoginPage implements OnInit {
         this.paso = 2;
       },
       error: (e) => {
-        this.servicio.mostrarMensaje("Surgio un error: "+ JSON.stringify(e, ["message", "statusText"]), "danger");
+        this.servicio.mostrarMensaje("Error: "+ JSON.stringify(e, ["message", "statusText"]), "danger");
       }
     });
   }
@@ -87,15 +94,14 @@ export class LoginPage implements OnInit {
     let resultado = this.usuarios.filter((usuario) => { return usuario.id_cliente == ev.target.value })
     if (resultado.length == 1) {
       this.usuarioVinculado = resultado[0];
-      this.usuarios = [];
-      this.terminarProceso();
     } else {
-      console.log("algo fallo");
+      console.log("error");
     }
   }
 
   terminarProceso() {
-    let loggedUser = {
+      this.usuarios = [];
+      let loggedUser = {
       token: this.usuarioVinculado.id_cliente,
       idioma: this.selectedLanguage
     }

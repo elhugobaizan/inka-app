@@ -8,7 +8,7 @@ import categorias from '../../assets/categorias.json';
 import ubicaciones from '../../assets/ubicaciones.json';
 import guias from '../../assets/guias.json';
 import { Usuario } from './interfaces_precarga';
-import { TranslateService } from '@ngx-translate/core';
+//import { TranslateService } from '@ngx-translate/core';
 import salida from '../../assets/salida.json';
 import { LowerCasePipe } from '@angular/common';
 
@@ -26,19 +26,19 @@ private httpHeader = new HttpHeaders().set('Content-Type','application/x-www-for
   constructor(
     private router: Router,
     private toast: ToastController,
-    private translate: TranslateService,
+    //private translate: TranslateService,
     private http: HttpClient
   ) { }
 
 getI18Ntextos(pagina: string, idioma: string) {
   idioma = (idioma==="Ingles") ? "en" : "es";
   let resTextos: any = null;
-    this.translate.setDefaultLang(idioma);
+/*     this.translate.setDefaultLang(idioma);
     this.translate.use(idioma);
     this.translate.get(pagina).subscribe((textos) => {
       resTextos = textos;
     });
-
+ */
     return resTextos;
   }
 

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Categoria, Ubicacion, Guia } from '../../utils/interfaces_precarga';
 import { ESTADORECLAMO, Reclamo } from '../../utils/interfaces-app';
 import { InkaService } from 'src/app/utils/inka.service';
-import { ModalController } from '@ionic/angular';
+import { IonImg, ModalController } from '@ionic/angular';
 import { ThanksPageComponent } from 'src/app/components/thanks-page/thanks-page.component';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-reclamo',
@@ -105,4 +106,22 @@ export class ReclamoPage implements OnInit {
     });
     modal.present();
   }
+
+  
+  async takePicture(foto: IonImg) {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
+  
+    // image.webPath will contain a path that can be set as an image src.
+    // You can access the original file using image.path, which can be
+    // passed to the Filesystem API to read the raw data of the image,
+    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
+    var imageUrl = image.webPath;
+  
+    // Can be set to the src of an image now
+    foto.src = imageUrl;
+  };
 }

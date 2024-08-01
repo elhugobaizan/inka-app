@@ -6,7 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { ExpeditionBoxComponent } from '../../components/expedition-box/expedition-box.component';
-import { SurveyBoxComponent } from '../../components/survey-box/survey-box.component';
+import { InkaCardButtonComponent } from '../../components/inka-card-button/inka-card-button.component';
 import { SurveyQuestionBoxComponent } from '../../components/survey-question-box/survey-question-box.component';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { SurveyQuestionBoxComponent } from '../../components/survey-question-box
     IonicModule,
     HomePageRoutingModule,
     ExpeditionBoxComponent,
-    SurveyBoxComponent,
+    InkaCardButtonComponent,
     SurveyQuestionBoxComponent
   ],
   declarations: [HomePage]

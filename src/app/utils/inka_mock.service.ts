@@ -8,7 +8,7 @@ import categorias from '../../assets/categorias.json';
 import ubicaciones from '../../assets/ubicaciones.json';
 import guias from '../../assets/guias.json';
 import { Usuario } from './interfaces_precarga';
-import { TranslateService } from '@ngx-translate/core';
+//import { TranslateService } from '@ngx-translate/core';
 import salida from '../../assets/salida.json';
 
 @Injectable({
@@ -26,18 +26,18 @@ export class InkaService {
   constructor(
     private router: Router,
     private toast: ToastController,
-    private translate: TranslateService,
+    //private translate: TranslateService,
     private http: HttpClient
   ) { }
 
   getI18Ntextos(pagina: string, idioma: string) {
     let resTextos: any = null;
-    this.translate.setDefaultLang(idioma);
+/*     this.translate.setDefaultLang(idioma);
     this.translate.use(idioma);
     this.translate.get(pagina).subscribe((textos) => {
       resTextos = textos;
     });
-
+ */
     return resTextos;
   }
 
@@ -63,15 +63,19 @@ export class InkaService {
       id_salida:2086,
       salida:"GPN05 Alexander - Yulia",
       mail: email
+    },
+    {
+      id_cliente:16875,
+      nombre:"Robert",
+      apellido:"von Luxburg",
+      idioma:"Ingles",
+      id_salida:2086,
+      salida:"GPN05 Robert - Yulia",
+      mail: email
     }];
 
       return of(JSON.stringify(usuario));
-
-/*     return this.http.post(this.URL_API, {
-      function: 'ClienteEmail',
-      Email: email
-    });
- */  }
+  }
 
   validarEmail(email: string) {
     let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
@@ -80,10 +84,17 @@ export class InkaService {
   }
 
   getUsuario(id: number) {
-    return this.http.post(this.URL_API, {
-      function: 'ClienteEmail',
-      id: id
-    });
+    let usuario: Usuario[] = [{
+      id_cliente:id,
+      nombre:"Alexander",
+      apellido:"von Luxburg",
+      idioma:"Ingles",
+      id_salida:2086,
+      salida:"GPN05 Alexander - Yulia",
+      mail: "email"
+    }];
+
+      return of(JSON.stringify(usuario));
   }
 
   getCategorias() {

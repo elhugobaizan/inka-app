@@ -12,6 +12,7 @@ export class ReclamosPage implements OnInit {
 
   public loggedUser: any = null;
   public textos: any = null;
+  public reclamos: Reclamo[] = [];
 
   constructor(
     private servicio: InkaService

@@ -8,7 +8,7 @@ import { SalidaPage } from './salida.page';
 import { InkaHeaderComponent } from 'src/app/components/inka-header/inka-header.component';
 import { ButtonBoxComponent } from "../../components/button-box/button-box.component";
 import { ExpeditionBoxComponent } from "../../components/expedition-box/expedition-box.component";
-import { SurveyBoxComponent } from "../../components/survey-box/survey-box.component";
+import { InkaCardButtonComponent } from "../../components/inka-card-button/inka-card-button.component";
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { SurveyBoxComponent } from "../../components/survey-box/survey-box.compo
     InkaHeaderComponent,
     ButtonBoxComponent,
     ExpeditionBoxComponent,
-    SurveyBoxComponent
+    InkaCardButtonComponent
 ],
   declarations: [SalidaPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

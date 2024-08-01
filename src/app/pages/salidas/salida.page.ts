@@ -50,7 +50,7 @@ export class SalidaPage implements OnInit {
     this.salida.descripcion = usuario.salida;
   }
 
-  itinerario() {
-    this.servicio.irA(`pages/itinerario/${this.salida.id}`);
+  irA(path: String) {
+    this.servicio.irA(`pages/${path}/${this.salida.id}`);
   }
 }

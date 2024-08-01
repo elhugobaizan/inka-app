@@ -1,12 +1,7 @@
 <div class="ion-page">
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button default-href="home" color="primary"></ion-back-button>
-      </ion-buttons>
-      <ion-title color="primary">Tu salida - {{salida.descripcion}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <inka-header clase="secundario" atras="pages/salida/{{salida.id}}">
+      Tu salida - {{salida.descripcion}}
+  </inka-header>
 
   <ion-content [fullscreen]="true">
     <ion-list *ngFor="let dia of salida.itinerario">

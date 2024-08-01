@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SurveyBoxComponent } from './survey-box.component';
+import { InkaButtonBoxComponent } from './inka-card-button.component';
 
 describe('SurveyBoxComponent', () => {
-  let component: SurveyBoxComponent;
-  let fixture: ComponentFixture<SurveyBoxComponent>;
+  let component: InkaButtonBoxComponent;
+  let fixture: ComponentFixture<InkaButtonBoxComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SurveyBoxComponent ],
+      declarations: [ InkaButtonBoxComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SurveyBoxComponent);
+    fixture = TestBed.createComponent(InkaButtonBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
